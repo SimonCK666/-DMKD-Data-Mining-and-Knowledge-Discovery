@@ -2,7 +2,7 @@
 Author: SimonCK666 SimonYang223@163.com
 Date: 2022-11-05 23:25:00
 LastEditors: SimonCK666 SimonYang223@163.com
-LastEditTime: 2022-11-07 10:49:11
+LastEditTime: 2022-11-07 11:08:52
 FilePath: /Project1/randomNumberGeneration.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%A
 '''
@@ -19,9 +19,9 @@ from scipy import stats
 1-1.1	Generate three streams (1D, 2D) of random numbers with 1,000 samples
 '''
 stream1D = np.random.randint(0, 100, size = [1000, 1])
-print(stream1D)
+print(stream1D.shape)
 stream2D = np.random.randint(0, 100, size = [1000, 2])
-print(stream2D)
+print(stream2D.shape)
 
 
 '''

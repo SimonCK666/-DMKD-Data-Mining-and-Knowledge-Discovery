@@ -2,7 +2,7 @@
 Author: SimonCK666 SimonYang223@163.com
 Date: 2022-11-05 23:25:00
 LastEditors: SimonCK666 SimonYang223@163.com
-LastEditTime: 2022-11-07 10:49:11
+LastEditTime: 2022-11-06 12:49:45
 FilePath: /Project1/randomNumberGeneration.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%A
 '''
@@ -22,7 +22,8 @@ stream1D = np.random.randint(0, 100, size = [1000, 1])
 print(stream1D)
 stream2D = np.random.randint(0, 100, size = [1000, 2])
 print(stream2D)
-
+stream3D = np.random.randint(0, 100, size = [1000, 3])
+print(stream3D)
 
 '''
 1-1.2	Visualize the generated samples, you may use a scatterplot.
@@ -37,6 +38,15 @@ plot.scatter(stream2D[:,0],stream2D[:,1])
 plot.title("2D stream scatterpoint graph")
 plot.show()
 
+# generate a 3D scatterpoint graph
+fig = plot.figure()
+ax = Axes3D(fig)
+ax.scatter(stream3D[:, 0], stream3D[:, 1], stream3D[:, 2])
+ax.set_zlabel('Z')  # axis
+ax.set_ylabel('Y')
+ax.set_xlabel('X')
+plot.title("3D stream scatterpoint graph")
+plot.show()
 
 '''
 1-1.3 & 4	Compute & Visualize the histogram of the three streams, then normalize them to become a probability density function (pdf).
@@ -50,4 +60,11 @@ plot.show()
 sns.distplot(stream2D[:,0], color='g')
 sns.distplot(stream2D[:,1], color='b')
 plot.title("histogram and pdf of 2D stream")
+plot.show()
+
+# histogram and pdf of 3D data
+sns.distplot(stream3D[:,0], color='r')
+sns.distplot(stream3D[:,1], color='g')
+sns.distplot(stream3D[:,2], color='b')
+plot.title("histogram and pdf of 3D stream")
 plot.show()
